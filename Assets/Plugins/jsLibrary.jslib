@@ -3,8 +3,8 @@ mergeInto(LibraryManager.library, {
     var jsString = UTF8ToString(utf8String);
     useStringFromUnity(jsString);
   }
-  sendValueFromUnity: function(utf8StringTwo){
-    var unityFloat = UTF8ToString(utf8StringTwo);
+  sendValueFromUnity: function(utf8String){
+    var unityFloat = UTF8ToString(utf8String);
     useValueFromUnity(unityFloat);
   }
 });
