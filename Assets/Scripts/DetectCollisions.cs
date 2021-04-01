@@ -8,6 +8,10 @@ public class DetectCollisions : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void sendStringFromUnity(string str);
     private string sendString;
+    private float spawnRangeX = 20;
+    private float spawnRangeZ = 20;
+    public GameObject targetBox;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +27,9 @@ public class DetectCollisions : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Randomizer();
+        SpawnBox();
+        // Destroy the target you hit
+        Destroy(other.gameObject);
     }
 
     void Randomizer()
@@ -32,5 +39,12 @@ public class DetectCollisions : MonoBehaviour
         sendString = val.ToString();
         Debug.Log("bang " + sendString);
         sendStringFromUnity(sendString);
+    }
+    void SpawnBox()
+    {
+        // randomly generate spawn position
+        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 1.5f, Random.Range(-spawnRangeZ, spawnRangeZ));
+        Debug.Log("bang2");
+        Instantiate(targetBox, spawnPos, targetBox.transform.rotation);
     }
 }
