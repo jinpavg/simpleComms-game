@@ -17,5 +17,7 @@ public class FollowPlayer : MonoBehaviour
     {
         // offset camera behind player by adding to the player's position
         transform.position = player.transform.position + offset;
+
+        transform.rotation = player.transform.rotation;
     }
 }
