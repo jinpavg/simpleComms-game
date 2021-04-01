@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/change-noise-box.unity
     guid: a2f4f751de15ab34d97a0f9457da9cf4
   m_configObjects: {}
