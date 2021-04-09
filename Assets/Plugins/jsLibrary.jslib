@@ -7,4 +7,8 @@ mergeInto(LibraryManager.library, {
     var unityFloat = UTF8ToString(utf8String);
     useValueFromUnity(unityFloat);
   },
+  pickSampleFromUnity: function(x) {
+  var unityInt = x;
+  useSampleFromUnity(unityInt);
+},
 });

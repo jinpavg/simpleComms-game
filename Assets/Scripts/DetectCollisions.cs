@@ -7,6 +7,10 @@ public class DetectCollisions : MonoBehaviour
 {
     [DllImport("__Internal")]
     private static extern void sendStringFromUnity(string str);
+
+    [DllImport("__Internal")]
+    private static extern void pickSampleFromUnity(int x);    
+
     private string sendString;
     private float spawnRangeX = 20;
     private float spawnRangeZ = 20;
@@ -35,10 +39,12 @@ public class DetectCollisions : MonoBehaviour
     void Randomizer()
     {
         int val = Random.Range(0, 100);
+        int sampleIndex = Random.Range(0, 3);
 
         sendString = val.ToString();
-        Debug.Log("bang " + sendString);
+        Debug.Log("bang " + sendString + sampleIndex);
         sendStringFromUnity(sendString);
+        pickSampleFromUnity(sampleIndex);
     }
     void SpawnBox()
     {
