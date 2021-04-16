@@ -8,10 +8,14 @@ mergeInto(LibraryManager.library, {
     useValueFromUnity(unityFloat);
   },
   pickSampleFromUnity: function(x) {
-  var unityInt = x;
-  useSampleFromUnity(unityInt);
-},
-  setParamWithFloat: function(param, float) {
-    updateParamWithFloat();
+    useSampleFromUnity(x);
+  },
+  setParamWithFloat: function(paramName, value) {
+    var param = UTF8ToString(paramName);
+    updateParamWithFloat(param, value);
+  },
+  setIndexFromUnity: function(arrayName, index) {
+    var array = UTF8ToString(arrayName);
+    getIndexFromUnity(array, index);
   },
 });

@@ -7,11 +7,13 @@ public class PlayerController : MonoBehaviour
 {
     [DllImport("__Internal")]
     private static extern void sendValueFromUnity(string str);
+    [DllImport("__Internal")]
+    private static extern void setParamWithFloat(string paramName, float value);
 
     public float horizontalInput;
     public float forwardInput;
     public float speed = 10.0f;
-    public float turnSpeed = 10.0f;
+    //public float turnSpeed = 10.0f;
     public float xRange = 19.0f;
     public float zRange = 19.0f;
     private float horizLoc;
@@ -57,7 +59,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * forwardInput * Time.deltaTime * speed);
 
         // turn the player
-        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+        //transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -68,5 +70,6 @@ public class PlayerController : MonoBehaviour
 
         horizLoc = transform.position.x;
         sendValueFromUnity(horizLoc.ToString());
+        setParamWithFloat("modTwo", horizLoc);
     }
 }
