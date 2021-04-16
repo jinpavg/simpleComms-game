@@ -11,4 +11,7 @@ mergeInto(LibraryManager.library, {
   var unityInt = x;
   useSampleFromUnity(unityInt);
 },
+  setParamWithFloat: function(param, float) {
+    updateParamWithFloat();
+  },
 });
