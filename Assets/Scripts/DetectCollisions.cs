@@ -13,7 +13,7 @@ public class DetectCollisions : MonoBehaviour
 
     [DllImport("__Internal")]
     private static extern void setParamWithFloat(string paramName, float value);
-    [DllImport("_Internal")]
+    [DllImport("__Internal")]
     private static extern void setIndexFromUnity(string arrayName, int index);  
 
     private string sendString;
@@ -50,7 +50,7 @@ public class DetectCollisions : MonoBehaviour
 
         sendStringFromUnity(sendString);
         pickSampleFromUnity(sampleIndex);
-        
+
         setParamWithFloat("mod", val);
         setIndexFromUnity("presets", sampleIndex);
     }
