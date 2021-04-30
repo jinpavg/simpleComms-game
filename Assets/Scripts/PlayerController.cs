@@ -15,11 +15,6 @@ public class PlayerController : MonoBehaviour
     public float zRange = 19.0f;
     private float horizLoc;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

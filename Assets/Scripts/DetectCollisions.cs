@@ -15,12 +15,6 @@ public class DetectCollisions : MonoBehaviour
     private float spawnRangeZ = 20;
     public GameObject targetBox;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
