@@ -6,17 +6,11 @@ using UnityEngine;
 public class DetectCollisions : MonoBehaviour
 {
     [DllImport("__Internal")]
-    private static extern void sendStringFromUnity(string str);
-
-    [DllImport("__Internal")]
     private static extern void pickSampleFromUnity(int x);    
 
     [DllImport("__Internal")]
-    private static extern void setParamWithFloat(string paramName, float value);
-    [DllImport("__Internal")]
-    private static extern void setIndexFromUnity(string arrayName, int index);  
+    private static extern void setParamWithFloat(string paramName, float value); 
 
-    private string sendString;
     private float spawnRangeX = 20;
     private float spawnRangeZ = 20;
     public GameObject targetBox;
@@ -46,13 +40,11 @@ public class DetectCollisions : MonoBehaviour
         int val = Random.Range(0, 100);
         int sampleIndex = Random.Range(0, 3);
 
-        sendString = val.ToString();
-
-        sendStringFromUnity(sendString);
+        // this number, which will be 0, 1, or 2, will set which sample should be triggered
         pickSampleFromUnity(sampleIndex);
 
+        // update a param called "mod" in our device
         setParamWithFloat("mod", val);
-        setIndexFromUnity("presets", sampleIndex);
     }
     void SpawnBox()
     {
